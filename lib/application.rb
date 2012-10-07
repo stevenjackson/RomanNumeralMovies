@@ -22,7 +22,7 @@ get '/' do
   if @results.empty?
     @columns = []
   else
-    @columns = ["Title", "Date Released"]
+    @columns = ["Title", "Year Released"]
   end
   
   @film_title = CGI.escapeHTML film_title
