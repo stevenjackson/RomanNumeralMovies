@@ -3,6 +3,7 @@ package agileexplained;
 import static org.junit.Assert.*;
 
 import java.sql.SQLException;
+import java.util.regex.Pattern;
 
 import org.junit.After;
 import org.junit.Before;
@@ -23,9 +24,18 @@ public class FilmDbIntegrationTest {
 		db.disconnect();
 	}
 	
+	private void assertMatchesFormat(String date) {
+		for(Pattern p : FilmDataReport.DATE_PATTERNS) {
+			if(p.matcher(date).matches())
+				return;
+		}
+		
+		fail("Did not find a match for" + date);
+	}
+	
 	@Test
 	public void connectToDb() throws Exception {
-		assertEquals(198313, db.getFilmCount());
+		assertEquals(198312, db.getFilmCount());
 	}
 	
 	@Test
@@ -38,5 +48,11 @@ public class FilmDbIntegrationTest {
 	public void retrieveFilmIsNullForNonExistentMovie() throws Exception {
 		assertNull(db.retrieveFilm("The Unlikely Adventures of @$%%UAasdfkj!!a"));
 	}
-
+	
+	@Test
+	public void yearFormatTest() {
+		for(String date :  db.getAllReleaseDates()){
+			assertMatchesFormat(date);
+		}
+	}
 }

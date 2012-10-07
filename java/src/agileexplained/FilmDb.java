@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashSet;
+import java.util.Set;
 
 public class FilmDb {
 	private static final String dbFile = "/Users/stevejackson/leandog/agileexplained/roman_numeral/film.db";
@@ -68,5 +70,23 @@ public class FilmDb {
 		
 		Film film = new Film(resultSet.getString("name"), resultSet.getString("initial_release_date"));
 		return film;
+	}
+
+	public Set<String> getAllReleaseDates() {
+		Set<String> dates = new HashSet<String>();
+		Statement statement = null;
+		try {
+			statement = connection.createStatement();  
+	        ResultSet resultSet = statement.executeQuery("SELECT DISTINCT initial_release_date FROM film");  
+	        while(resultSet.next()) {
+	        		dates.add(resultSet.getString(1));
+	        }
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close(statement);
+		}
+		return dates;
 	}
 }
