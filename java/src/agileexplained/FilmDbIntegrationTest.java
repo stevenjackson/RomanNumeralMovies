@@ -25,7 +25,7 @@ public class FilmDbIntegrationTest {
 	}
 	
 	private void assertMatchesFormat(String date) {
-		for(Pattern p : FilmDataReport.DATE_PATTERNS) {
+		for(Pattern p : FilmDate.DATE_PATTERNS) {
 			if(p.matcher(date).matches())
 				return;
 		}

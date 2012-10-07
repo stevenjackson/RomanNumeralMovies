@@ -14,8 +14,8 @@ public class Film {
 		return title;
 	}
 
-	public String getDate() {
-		return date;
+	public FilmDate getDate() {
+		return new FilmDate(date);
 	}
 
 }
