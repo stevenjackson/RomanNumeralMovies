@@ -1,0 +1,14 @@
+%h1 Movie Release Date Finder
+
+%form(action="/")
+  %input(name="film_title"  value="#{@film_title}")
+  %input(type="submit" value="Find Date")
+
+%table
+  %tbody
+    %thead
+      - @columns.each do |header|
+        %th= header
+    %tr
+      - @results.each do |column|
+        %td= column
