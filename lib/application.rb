@@ -7,7 +7,6 @@ require 'java'
 $CLASSPATH << "java/lib/sqlite-jdbc-3.7.2.jar"
 $CLASSPATH << "java/bin"
 java_import 'agileexplained.FilmService'
-puts File.expand_path('film.db')
 films = FilmService.new(File.expand_path('film.db'))
 
 get '/' do

@@ -18,7 +18,7 @@ public class FilmDbIntegrationTest {
 
 	@Before
 	public void setUp() throws Exception {
-		File theFilmDb = new File("../film.db");
+		File theFilmDb = new File("film.db");
 		db = new FilmDb(theFilmDb.getAbsolutePath());
 		db.connect();
 	}

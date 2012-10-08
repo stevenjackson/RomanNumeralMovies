@@ -13,7 +13,6 @@ public class FilmDb {
 	private Connection connection;
 	public FilmDb(String dbFile) {
 		this.dbFile = dbFile;
-		System.out.println(dbFile);
 	}
 	public void connect() throws Exception {
 		Class.forName("org.sqlite.JDBC");
