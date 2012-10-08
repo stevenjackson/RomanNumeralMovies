@@ -15,6 +15,7 @@ public class FilmDataReport {
 		List<String> attributes = new ArrayList<String>();
 		attributes.add(film.getTitle());
 		attributes.add(film.getDate().year());
+		attributes.add(film.getDate().romanYear());
 		return attributes;
 	}
 
