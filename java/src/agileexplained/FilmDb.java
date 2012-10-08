@@ -9,9 +9,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class FilmDb {
-	private static final String dbFile = "/Users/stevejackson/leandog/agileexplained/roman_numeral/film.db";
+	private String dbFile = "/Users/stevejackson/leandog/agileexplained/roman_numeral/film.db";
 	private Connection connection;
-	
+	public FilmDb(String dbFile) {
+		this.dbFile = dbFile;
+		System.out.println(dbFile);
+	}
 	public void connect() throws Exception {
 		Class.forName("org.sqlite.JDBC");
 		connection = DriverManager.getConnection("jdbc:sqlite:" + dbFile);
