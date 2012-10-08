@@ -2,4 +2,5 @@
 .classpath
 .metadata/
 java/bin/
-
+.settings
+.DS_Store
