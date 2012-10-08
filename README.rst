@@ -19,6 +19,6 @@ By default, the film.db contains a flat table called filmwith all the data from 
 
 This was generated using the sqlite.import.film script
 
-     sqlite333 film.db << sqlite.import.film
+     sqlite3 film.db << sqlite.import.film
 
 
