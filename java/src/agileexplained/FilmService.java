@@ -1,7 +1,5 @@
 package agileexplained;
 
-import java.sql.SQLException;
-
 public class FilmService {
 	private FilmDb db;
 
