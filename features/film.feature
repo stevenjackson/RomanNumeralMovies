@@ -9,3 +9,7 @@ Feature:  Retrieve Release Year
   Scenario: Verify year is present in the results
     When I search for "The Goonies"
     Then I should see "1985"
+    
+  Scenario:  Verify roman year is present in the results
+    When I search for "The Goonies"
+    Then I should see "MCMLXXXV"
