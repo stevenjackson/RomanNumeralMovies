@@ -1,7 +1,11 @@
 package agileexplained;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.fail;
 
+import java.io.File;
 import java.util.regex.Pattern;
 
 import org.junit.After;
@@ -14,7 +18,8 @@ public class FilmDbIntegrationTest {
 
 	@Before
 	public void setUp() throws Exception {
-		db = new FilmDb();
+		File theFilmDb = new File("../film.db");
+		db = new FilmDb(theFilmDb.getAbsolutePath());
 		db.connect();
 	}
 	
