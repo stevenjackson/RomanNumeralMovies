@@ -9,4 +9,7 @@ Feature:  Retrieve Release Year
     When I search for "The Goonies"
     Then I should see "1985"
     
-    
+  Scenario: Verify year is present in the results
+    Given I am on the movie lookup page
+    When I search for "The Goonies"
+    Then I should see "MCMLXXXV"
