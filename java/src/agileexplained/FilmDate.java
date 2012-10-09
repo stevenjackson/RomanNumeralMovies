@@ -33,4 +33,8 @@ public class FilmDate {
 		throw new IllegalArgumentException("Could not parse " + date);
 	}
 
+	public String romanYear() {
+		return RomanNumeral.convert(year());
+	}
+
 }
