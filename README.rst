@@ -1,5 +1,9 @@
 Getting up and running
 ======================
+Setup uses .rvmrc  you have rvm installed, if not you'll have to get jruby and any needed gems
+
+Install gems using bundler
+    bundle install
 
 Need to compile java files in java/src.
 
@@ -19,6 +23,6 @@ By default, the film.db contains a flat table called filmwith all the data from 
 
 This was generated using the sqlite.import.film script
 
-     sqlite333 film.db << sqlite.import.film
+     sqlite3 film.db << sqlite.import.film
 
 

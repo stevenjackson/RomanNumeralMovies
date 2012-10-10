@@ -1,0 +1,7 @@
+kill `cat rack.pid`
+
+git checkout .
+git clean -f 
+git checkout roman-numeral-2
+
+rackup -P rack.pid

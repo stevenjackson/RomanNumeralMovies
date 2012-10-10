@@ -3,13 +3,13 @@ package agileexplained;
 public class FilmService {
 	private FilmDb db;
 
-	public FilmService() {
-		setupDb();
+	public FilmService(String pathToFilmDatabase) {
+		setupDb(pathToFilmDatabase);
 	}
 	
-	private void setupDb() {
+	private void setupDb(String pathToFilmDatabase) {
 		try {
-			db = new FilmDb();
+			db = new FilmDb(pathToFilmDatabase);
 			db.connect(); 
 		} catch (Exception ex) {
 			throw new RuntimeException(ex);
